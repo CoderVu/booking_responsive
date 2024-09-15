@@ -1,0 +1,307 @@
+:root {
+    --primary-color: hsl(199,100%,33%);
+    --secondary-color: hsl(187,85%,43%);
+    --gradient-color: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+    --white-color: hsl(0, 0%, 100%);
+    --black-color: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --white-color-dream: hsl(0, 0%, 93%);
+    --gray-text: rgba(190, 190, 190);
+    --input-color: rgba(239, 239, 239, 0.13);
+    --body-color: rgba(240, 240, 246);
+    --cartbg-color: rgba(255, 255, 255); 
+}
+
+.home {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgb(47,106,127);
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        mix-blend-mode: hard-light;
+    }
+
+    video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        object-fit: cover;
+    }
+
+    .homeContext {
+        width: 100%;
+        height: max-content;
+        padding: 8rem 1.5rem 3rem;
+        display: flex;
+        row-gap: 3rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        margin: auto;
+        color: var(--white-color);
+        z-index: 100;
+
+        .textDiv {
+            padding: 2rem 0;
+
+            .smallText {
+                font-size: 13px;
+                text-transform: uppercase;
+            }
+
+            .homeTitle {
+                position: relative;
+                font-size: 1.8rem;
+            }
+        }
+
+        .cardDiv {
+            position: relative;
+            padding: 2rem 1rem;
+            background: var(--white-color);
+            border-radius: 10px;
+            gap: 1rem;
+            lable{
+                display: block;
+                color: var(--textColor);
+                padding-bottom: 10px;
+                font-size: 13px;
+                font-weight: 500;
+
+            }
+            .label_total {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .total {
+                    color: var(--textColor);
+                    font-size: 18px;
+                    padding-bottom: 10px;
+                }
+            }
+            .input{
+                height: 40px;
+                padding: 0 1rem;
+                background: var(--input-color);
+                border-radius: 3rem;
+                input{
+                    background: none;
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    font-size: 12px;
+                    font-weight: 500;
+                    &::placeholder{
+                        font-size: 13px;
+                    }
+                }
+                .icon{
+                    font-size: 18px;
+                    color: var(--white-color);
+                    margin-left: 10px;
+                    &:hover{
+                        color: var(--secondary-color);
+                    }
+                }
+                &[type=range]{
+                    background: blue;
+                }
+            }
+
+            
+
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            padding-bottom: 10px;
+            font-weight: 500;
+            color: var(--textColor);
+        }
+
+        .priceInput {
+            display: grid;
+            row-gap: 1rem;
+            justify-items: space-between;
+            align-items: center;
+
+            .label_total {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .total {
+                    color: var(--textColor);
+                    font-size: 18px;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .input {
+            height: 40px;
+            padding: 0 1rem;
+            background: var(--input-color);
+            border-radius: 3rem;
+
+            input {
+                background: none;
+                border: none;
+                outline: none;
+                width: 100%;
+                font-size: 12px;
+                font-weight: 500;
+
+                &::placeholder {
+                    font-size: 13px;
+                }
+            }
+
+            .icon {
+                font-size: 18px;
+                color: var(--white-color);
+                margin-left: 10px;
+
+                &:hover {
+                    color: var(--secondary-color);
+                }
+            }
+
+            &[type=range] {
+                background: blue;
+            }
+        }
+
+        .searchOptions {
+            position: absolute;
+            background: var(--gradient-color);
+            width: max-content;
+            bottom: -0.7rem;
+            column-gap: .8rem;
+            padding: 5px 1rem;
+            border-radius: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            justify-content: center;
+            cursor: pointer;
+
+            &:hover {
+                background: var(--primary-color);
+            }
+
+            .icon {
+                font-size: 18px;
+            }
+
+            span {
+                font-weight: 13px;
+            }
+        }
+
+        .homeFooterIcons {
+            width: 100%;
+            justify-self: space-between;
+
+            .rightIcons, .leftIcons {
+                .icon {
+                    font-size: 18px;
+                    color: var(--white-color);
+                    margin-left: 10px;
+
+                    &:hover {
+                        color: var(--secondary-color);
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 500px) {
+    .home {
+        .homeContext {
+            .textDiv{
+                .smallText{
+                    font-size: 16px;
+                }
+                .homeTitle{
+                    position: relative;
+                    font-size: 2.5rem;
+                    width: max-content;
+                    /* độ rộng tối đa */
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        width: 145px;
+                        height: 5px;
+                        background: var(--primary-color);
+                        bottom: -5px;
+                        right: 0px;
+                        z-index: -1;
+                    }
+                    /* Hiển thị phía sau */
+
+                }
+                
+            }
+            .cardDiv{
+                grid-template-columns: repeat(2, 1fr);
+                /* Hiển thị 2 cột */
+            }
+        }
+    }
+    
+}
+@media screen and (min-width: 660px) {
+    .home {
+        .homeContext {
+            .cardDiv{
+                grid-template-columns: repeat(3, 1fr);
+                /* Hiển thị 3 cột */
+            }
+        }
+    }
+    
+}
+@media screen and (min-width: 940px) {
+    .home {
+        height: 85vh;
+    }   
+}
+@media screen and (min-width: 1240px) {
+    .home {
+        height: 80vh;
+        .homeContext {
+            padding-left: 10px;
+            padding-right: 10px;
+           .cardDiv{
+                padding: 2rem 1rem;
+                grid-template-columns: repeat(3, 1fr);
+                /* Hiển thị 4 cột */
+                .input{
+                    margin-bottom: 1rem;
+                }
+           }
+        }
+    }   
+}
+

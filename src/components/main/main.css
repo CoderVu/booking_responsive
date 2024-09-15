@@ -1,0 +1,210 @@
+:root {
+    --primary-color: hsl(199,100%,33%);
+    --secondary-color: hsl(187,85%,43%);
+    --gradient-color: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+    --white-color: hsl(0, 0%, 100%);
+    --black-color: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --white-color-dream: hsl(0, 0%, 93%);
+    --gray-text: rgba(190, 190, 190);
+    --input-color: rgba(239, 239, 239, 0.13);
+    --body-color: rgba(240, 240, 246);
+    --cartbg-color: rgba(255, 255, 255); 
+}
+.main {
+    width: 100%;
+    .secTitle{
+        .title{
+            position: relative;
+            /* tạo vị trí tương đối cho title */
+            width: max-content;
+            color: var(--textColor);
+            margin: 1rem 0;
+            /* khoảng cách giữa các title trái và phải là 1rem còn giữa các title trên và dưới là 0 */
+            z-index: 2;
+            &::after{
+                position: absolute;
+                /* tạo vị trí tuyệt đối cho title */
+                content: "";
+                /* nội dung của title */
+                background: var(--secondary-color);
+                height: 5px;
+                width: 120px;
+                right: 0;
+                bottom: -5px;
+                /* vị trí của title cách phía dưới 5px */
+                z-index: -1;
+            }
+        }
+    }
+    .secContent {
+        justify-content: center; 
+        /* cho các item nằm giữa */
+        gap: 1.5rem;
+        /* khoảng cách giữa các item */
+        .singleDestination{
+            height: 100%; 
+            /* Chiều cao của item */
+            display: grid;
+            /* Hiển thị theo lưới */
+            border-radius: 10px;
+            /* bo tròn */
+            align-items: center;
+            /* căn giữa theo chiều dọc */
+            background: var(--cartbg-color);
+            /* màu nền của item */
+            box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+            /* đổ bóng của mỗi item*/
+            overflow: hidden;
+            /* ẩn phần nằm ngoài khung */;
+            &:hover{
+                background: var(--cartbg-color);
+                /* màu nền của item */
+                box-shadow: 0 4px 4px rgba(85, 85, 114, 0.549);
+                /* đổ bóng của mỗi item*/
+                transform: .3s ease;
+                /* hiệu ứng chuyển động */
+
+            }
+            .imageDiv{
+                width: 100%;
+                height: 180px;
+                overflow: hidden;
+                /* ẩn phần nằm ngoài khung */
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    /* ảnh sẽ bị căn giữa và cắt đi phần thừa */
+                    transition: 2s ease;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.1);
+                        /* phóng to ảnh lên 1.1 lần */
+                    }
+                   
+                }
+            }
+            .cardInfo{
+                padding: 1rem;
+                /* khoảng cách giữa các phần tử bên trong */
+                .destTitle{
+                    color: var(--black-color);
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                }
+                   
+                .container{
+                    gap: .5rem;
+                    /* khoảng cách giữa các phần tử */
+                    .icon{
+                        font-size: 18px;
+                        color: var(--textColor);
+                    }
+                    .name{
+                        font-size: 14px;
+                        color: var(--textColor);
+                    }
+                }
+                .fees{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    /* căn giữa nội dung theo chiều ngang */
+                    margin: 1rem 0;
+                    /* khoảng cách giữa các phần tử */
+                    padding: 1rem;
+                    /* khoảng cách giữa các phần tử bên trong */
+                    border-top: 1.5px solid var(--gray-text);
+                    /* tạo đường kẻ */
+                    border-bottom: 1.5px solid var(--gray-text);
+                    /* tạo đường kẻ */
+                    .grade{
+                        font-size: 1rem;
+                        font-weight: 600;
+                        color: var(--textColor);
+                        max-width: 100px;
+                        line-height: 20px;
+                        /* chiều cao của dòng */
+                        display: flex;
+                        align-items: center;
+                        small{
+                            text-align: center;
+                            /* căn giữa chữ theo chiều ngang */
+                            background: var(--gradient-color);
+                            border-radius: 1rem;
+                            color: var(--white-color);
+                            padding: 1px 10px;
+                            /* khoảng cách giữa chữ và khung */
+                            margin-left: 5px;
+                            /* khoảng cách giữa chữ và khung */
+                            font-size: 10px;
+                        }
+                    }
+                    .price{
+                        font-size: 2rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                    }
+                }
+                .desc{
+                    color: var(--textColor);
+                    font-size: 13.5px;
+                    font-weight: 500;
+                }
+                .btn{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    /* căn giữa nội dung theo chiều ngang */
+                    margin-top: 1rem;
+                    /* khoảng cách giữa các phần tử */       
+                    color: var(--white-color);   
+                    .icon{
+                        font-size: 18px;
+                        align-items: center;
+                    }   
+                    a{
+                        font-weight: 600;
+                        color: var(--white-color);
+                        padding: .5rem 1rem;
+                        /* khoảng cách giữa chữ và khung */
+                        background: var(--gradient-color);
+                        border-radius: 5px;
+                        /* bo tròn */
+                        transition: .3s ease;
+                        /* hiệu ứng chuyển động */
+                        &:hover{
+                            background: var(--primary-color);
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 500px){
+    .title{
+        font-size: 1.5rem;
+        &::after{
+            width: 155px !important;
+            /* chiều rộng của title 155px và !important để ghi đè lên */
+        }
+    }
+    .secContent{
+        grid-template-columns: repeat(2, 1fr);
+        /* chia đều 2 cột */
+        .singleDestination{
+            height: auto;
+        }
+    }
+}
+@media screen and (min-width: 840px){
+    .secContent{
+        grid-template-columns: repeat(3, 1fr);
+        /* chia đều 3 cột */
+    }
+    
+}

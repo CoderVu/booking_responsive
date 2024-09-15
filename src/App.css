@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Colors and styling */
+:root {
+    --primary-color: hsl(199,100%,33%);
+    --secondary-color: hsl(187,85%,43%);
+    --gradient-color: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+    --while-color: hsl(0, 0%, 100%);
+    --black-color: hsl(201, 33%, 16%);
+    --whilte-color-deam: hsl(0, 0%, 93%);
+    --gray-text: rgba(190, 190, 190);
+    --textColor: hsl(240, 4%, 36%);
+    --input-color: rgba(239, 239, 239);
+    --body-color: rgba(240, 240, 246);
+    --cartbg-color: rgba(255, 255, 255);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html{
+    scroll-behavior: smooth;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body{
+    background-color: azure;
 }
-
-.App-link {
-  color: #61dafb;
+a{
+    text-decoration: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li{
+    list-style: none;
+}
+.section{
+    padding: 4rem 0 2 rem;
+}
+.container {
+   padding-left: 1.5rem;
+   padding-right: 1.5rem;
+}
+.icon {
+    font-size : 2rem;
+    cursor: pointer;
+}
+.flex{  
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+.grid{
+    display: grid;
+    align-items: center;
+}
+.btn{
+    padding: .6rem 1.5rem;
+    background : var(--gradient-color);
+    border-radius: 3rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.btn a {
+    color: var(--while-color);
+    font-weight: 500;
+}
+.btn:hover {
+   background: var(--secondary-color); 
+}
+img, video {
+    width: 100%;
+    height: auto;
+}
+input{
+    font-size: 100%;
+}
+@media screen and (min-width: 1240px){ 
+    .container{
+        width: 90% !important;
+        margin: auto !important;
+    }
+    .section{
+        padding: 6rem 0 4rem;
+        /* trên 6rem dưới 0 và bên phải bên trái 4rem */
+    } 
+    
+}
+@media screen and (min-width: 2560px){
+   body{
+      zoom: 1.7;
+      /* phóng to 1.7 lần */
+   }
+    
 }
